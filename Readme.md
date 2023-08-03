@@ -15,3 +15,9 @@ docker run -it --rm --cpus=8 -v $(pwd):/data whisper:v20230314
 ```
 whisper 69-竹枝词.mp3 --model medium --language Chinese
 ```
+
+4. 切割mp3
+
+```
+ffmpeg -i input.mp3 -ss hh:mm:ss -t hh:mm:ss -acodec copy output.mp3
+```
