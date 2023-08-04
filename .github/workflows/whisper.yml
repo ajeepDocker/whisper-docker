@@ -34,7 +34,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
   
-    - name: Build and push tr-ocr
+    - name: Build and push whisper-docker
       uses: docker/build-push-action@v3
       with:
         context: ./
