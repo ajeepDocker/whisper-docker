@@ -1,5 +1,5 @@
 FROM python:3.9.17-slim-bullseye AS whisper
-COPY sources.list /etc/apt/
+#COPY sources.list /etc/apt/
 
 RUN set -e; pwd \
   && apt-get update && apt-get install -y git ffmpeg \
@@ -8,6 +8,7 @@ RUN set -e; pwd \
   && pip install git+https://github.com/openai/whisper.git \
   && rm -rf /var/lib/apt/lists/*; apt clean
 
-ENTRYPOINT [ "/bin/bash" ]
+ENTRYPOINT [ "/usr/local/bin/whisper" ]
 WORKDIR /data
+CMD [ "-h" ]
 
