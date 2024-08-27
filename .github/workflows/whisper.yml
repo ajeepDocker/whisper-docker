@@ -41,4 +41,5 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/whisper:v20230314
+        platforms: linux/amd64,linux/arm64
 
